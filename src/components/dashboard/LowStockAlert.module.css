@@ -1,0 +1,11 @@
+.list {
+  list-style: none;
+  padding: 0;
+  margin: 10px 0 0;
+  display: grid;
+  gap: 6px;
+}
+
+.critical {
+  color: #c0392b;
+}

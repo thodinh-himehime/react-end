@@ -1,0 +1,23 @@
+.badge {
+  padding: 2px 8px;
+  border-radius: 12px;
+  font-size: 12px;
+  background: #f2f2f2;
+  color: #333;
+}
+
+.pending {
+  background: #fff3cd;
+}
+
+.processing {
+  background: #dbeafe;
+}
+
+.completed {
+  background: #dcfce7;
+}
+
+.cancelled {
+  background: #fee2e2;
+}

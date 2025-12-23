@@ -1,0 +1,49 @@
+.page {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.newButton {
+  background: #111;
+  color: #fff;
+  padding: 8px 12px;
+  border-radius: 4px;
+  text-decoration: none;
+}
+
+.filters {
+  display: flex;
+  gap: 10px;
+  align-items: center;
+}
+
+.filters select,
+.filters button {
+  padding: 8px 10px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  background: #fff;
+}
+
+.searching {
+  font-size: 13px;
+  color: #666;
+}
+
+.message {
+  color: #2c7a7b;
+}
+
+.empty {
+  background: #fff;
+  padding: 16px;
+  border-radius: 6px;
+  border: 1px dashed #ccc;
+}

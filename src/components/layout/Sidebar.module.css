@@ -1,0 +1,42 @@
+.sidebar {
+  width: 220px;
+  background: #fff;
+  border-right: 1px solid #eee;
+  padding: 16px;
+  transition: transform 0.2s ease;
+}
+
+.nav {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.nav a {
+  text-decoration: none;
+  color: #111;
+}
+
+.active {
+  font-weight: 600;
+}
+
+.toggle {
+  border: 1px solid #ccc;
+  background: transparent;
+  padding: 4px 8px;
+  margin-bottom: 12px;
+  cursor: pointer;
+}
+
+.closed {
+  transform: translateX(-100%);
+}
+
+@media (max-width: 768px) {
+  .sidebar {
+    position: absolute;
+    z-index: 10;
+    height: 100vh;
+  }
+}
