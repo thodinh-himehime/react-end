@@ -40,7 +40,8 @@ const ProductTable = ({ products, onDelete }: ProductTableProps) => {
             <td>
               <span className={`${styles.status} ${styles[product.status]}`}>{product.status}</span>
             </td>
-            <td className={styles.actions}>
+            <td >
+              <div className={styles.actions}>
               <Link to={`${ROUTES.products}/${product.id}`}>
                 <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
                   <path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"></path>
@@ -64,6 +65,7 @@ const ProductTable = ({ products, onDelete }: ProductTableProps) => {
                 </svg>
                 Delete
               </button>
+              </div>
             </td>
           </tr>
         ))}
