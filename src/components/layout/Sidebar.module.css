@@ -1,9 +1,11 @@
 .sidebar {
   width: 220px;
-  background: #fff;
-  border-right: 1px solid #eee;
+  background: var(--surface);
+  backdrop-filter: blur(10px);
+  border-right: 1px solid var(--border);
   padding: 16px;
   transition: transform 0.2s ease;
+  box-shadow: var(--shadow);
 }
 
 .nav {
@@ -14,19 +16,36 @@
 
 .nav a {
   text-decoration: none;
-  color: #111;
+  color: var(--text-secondary);
+  padding: 10px 12px;
+  border-radius: 8px;
+  transition: all 0.3s ease;
+}
+
+.nav a:hover {
+  color: var(--primary);
+  background: var(--primary-lighter);
 }
 
 .active {
   font-weight: 600;
+  color: var(--primary);
+  background: var(--primary-lighter);
 }
 
 .toggle {
-  border: 1px solid #ccc;
+  border: 1px solid var(--primary-light);
   background: transparent;
   padding: 4px 8px;
   margin-bottom: 12px;
   cursor: pointer;
+  border-radius: 8px;
+  color: var(--primary);
+  transition: all 0.3s ease;
+}
+
+.toggle:hover {
+  background: var(--primary-lighter);
 }
 
 .closed {

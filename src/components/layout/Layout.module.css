@@ -1,7 +1,8 @@
 .layout {
   display: flex;
   min-height: 100vh;
-  background: #f9f9f9;
+  background: linear-gradient(135deg, var(--background) 0%, #fff5fa 100%);
+  gap: 0;
 }
 
 .content {
@@ -12,6 +13,7 @@
 
 .main {
   padding: 24px;
+  flex: 1;
 }
 
 @media (max-width: 768px) {

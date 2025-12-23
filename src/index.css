@@ -1,11 +1,25 @@
-@import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;600&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
 
 :root {
-  font-family: 'IBM Plex Sans', sans-serif;
-  line-height: 1.5;
+  /* Color Palette - Light Pink & Clean */
+  --primary: #ff6b9d;
+  --primary-light: #ffb3d9;
+  --primary-lighter: #ffe0f0;
+  --secondary: #f09fbf;
+  --accent: #ff8fab;
+  --background: #fff9fc;
+  --surface: rgba(255, 255, 255, 0.7);
+  --surface-dark: rgba(255, 255, 255, 0.5);
+  --text-primary: #2d2d3d;
+  --text-secondary: #6a6a7e;
+  --border: rgba(255, 107, 157, 0.1);
+  --shadow: 0 8px 32px 0 rgba(255, 107, 157, 0.1);
+  
+  font-family: 'Poppins', sans-serif;
+  line-height: 1.6;
   font-weight: 400;
-  color: #111;
-  background-color: #f9f9f9;
+  color: var(--text-primary);
+  background: linear-gradient(135deg, var(--background) 0%, #fff5fa 100%);
   font-synthesis: none;
   text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;
@@ -18,10 +32,17 @@
 body {
   margin: 0;
   min-height: 100vh;
+  background: linear-gradient(135deg, var(--background) 0%, #fff5fa 100%);
 }
 
 a {
-  color: inherit;
+  color: var(--primary);
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+a:hover {
+  color: var(--accent);
 }
 
 button,
@@ -30,3 +51,4 @@ textarea,
 select {
   font-family: inherit;
 }
+

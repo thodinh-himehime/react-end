@@ -1,7 +1,21 @@
 .input {
-  border: 1px solid #ccc;
-  border-radius: 4px;
-  padding: 8px 10px;
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  padding: 10px 14px;
   font-size: 14px;
-  min-width: 220px;
+  min-width: 240px;
+  background: var(--surface);
+  backdrop-filter: blur(5px);
+  color: var(--text-primary);
+  transition: all 0.3s ease;
+}
+
+.input:focus {
+  outline: none;
+  border-color: var(--primary);
+  box-shadow: 0 0 0 3px rgba(255, 107, 157, 0.1);
+}
+
+.input::placeholder {
+  color: var(--text-secondary);
 }

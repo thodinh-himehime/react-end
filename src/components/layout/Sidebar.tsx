@@ -6,7 +6,7 @@ const Sidebar = ({ isOpen, onToggle }: { isOpen: boolean; onToggle: () => void }
   return (
     <aside className={`${styles.sidebar} ${isOpen ? styles.open : styles.closed}`}>
       <button className={styles.toggle} onClick={onToggle}>
-        {isOpen ? 'Hide' : 'Show'}
+        {isOpen ? '−' : '+'}
       </button>
       <nav className={styles.nav}>
         <NavLink to={ROUTES.dashboard} className={({ isActive }) => (isActive ? styles.active : undefined)}>

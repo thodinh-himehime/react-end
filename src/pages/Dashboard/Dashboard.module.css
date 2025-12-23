@@ -1,19 +1,19 @@
 .dashboard {
   display: flex;
   flex-direction: column;
-  gap: 20px;
+  gap: 24px;
 }
 
 .stats {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
-  gap: 12px;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 16px;
 }
 
 .grid {
   display: grid;
   grid-template-columns: 2fr 1fr;
-  gap: 12px;
+  gap: 16px;
 }
 
 @media (max-width: 900px) {

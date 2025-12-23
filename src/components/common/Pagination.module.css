@@ -4,6 +4,12 @@
   justify-content: space-between;
   margin-top: 16px;
   font-size: 14px;
+  padding: 16px;
+  background: var(--surface);
+  backdrop-filter: blur(10px);
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  box-shadow: var(--shadow);
 }
 
 .controls {
@@ -12,23 +18,33 @@
 }
 
 .controls button {
-  border: 1px solid #ccc;
-  background: #fff;
-  padding: 4px 8px;
+  border: 1px solid var(--primary-light);
+  background: transparent;
+  padding: 6px 10px;
   cursor: pointer;
+  border-radius: 6px;
+  color: var(--primary);
+  transition: all 0.3s ease;
+  font-weight: 500;
+}
+
+.controls button:hover:not(:disabled) {
+  background: var(--primary-lighter);
+  border-color: var(--primary);
 }
 
 .controls button:disabled {
-  opacity: 0.5;
+  opacity: 0.4;
   cursor: not-allowed;
 }
 
 .active {
-  background: #111;
+  background: linear-gradient(135deg, var(--primary) 0%, var(--accent) 100%);
   color: #fff;
-  border-color: #111;
+  border-color: var(--primary);
 }
 
 .range {
-  color: #666;
+  color: var(--text-secondary);
+  font-weight: 500;
 }

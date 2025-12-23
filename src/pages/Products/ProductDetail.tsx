@@ -39,8 +39,67 @@ const ProductDetail = () => {
     navigate(ROUTES.products)
   }
 
-  if (loading) return <div>Loading product...</div>
-  if (error) return <div>{error}</div>
+  if (loading) {
+    return (
+      <div className={styles.page}>
+        <Breadcrumbs
+          items={[
+            { label: 'Home', to: ROUTES.dashboard },
+            { label: 'Products', to: ROUTES.products },
+          ]}
+        />
+        <div style={{
+          textAlign: 'center',
+          padding: '32px',
+          color: 'var(--text-secondary)',
+          fontSize: '16px'
+        }}>
+          Loading product...
+        </div>
+      </div>
+    )
+  }
+
+  if (error) {
+    return (
+      <div className={styles.page}>
+        <Breadcrumbs
+          items={[
+            { label: 'Home', to: ROUTES.dashboard },
+            { label: 'Products', to: ROUTES.products },
+          ]}
+        />
+        <div style={{
+          textAlign: 'center',
+          padding: '32px',
+          backgroundColor: 'var(--surface)',
+          borderRadius: '12px',
+          border: '1px solid var(--border)',
+          color: '#ff4d4d'
+        }}>
+          <p style={{ fontSize: '16px', marginBottom: '16px' }}>{error}</p>
+          <button 
+            onClick={() => navigate(ROUTES.products)}
+            style={{
+              background: 'linear-gradient(135deg, var(--primary) 0%, var(--accent) 100%)',
+              color: '#fff',
+              border: 'none',
+              padding: '10px 20px',
+              borderRadius: '8px',
+              cursor: 'pointer',
+              fontWeight: 600,
+              transition: 'transform 0.3s ease'
+            }}
+            onMouseEnter={(e) => (e.currentTarget.style.transform = 'translateY(-2px)')}
+            onMouseLeave={(e) => (e.currentTarget.style.transform = 'translateY(0)')}
+          >
+            Back to Products
+          </button>
+        </div>
+      </div>
+    )
+  }
+
   if (!product) return null
 
   return (
@@ -57,17 +116,35 @@ const ProductDetail = () => {
         <div className={styles.actions}>
           <Link to={`${ROUTES.products}/${product.id}/edit`}>Edit</Link>
           <button onClick={handleDelete}>Delete</button>
-          <button onClick={() => navigate(-1)}>Back</button>
+          <button onClick={() => navigate(ROUTES.products)}>Back</button>
         </div>
       </div>
       <div className={styles.content}>
         <img src={product.imageUrl} alt={product.name} />
         <div>
-          <p>{product.description}</p>
-          <p>Price: {formatCurrency(product.price)}</p>
-          <p>Stock: {product.stock}</p>
-          <p>Status: {product.status}</p>
-          <p>Created: {formatDate(product.createdAt)}</p>
+          <p className={styles.description}>{product.description}</p>
+          
+          <div className={styles.priceSection}>
+            <span style={{ fontSize: '12px', color: 'var(--text-secondary)', fontWeight: 600 }}>PRICE</span>
+            <span className={styles.price}>{formatCurrency(product.price)}</span>
+          </div>
+
+          <div className={styles.meta}>
+            <div className={styles.metaItem}>
+              <span className={styles.metaLabel}>Stock</span>
+              <span className={styles.metaValue}>{product.stock} units</span>
+            </div>
+            <div className={styles.metaItem}>
+              <span className={styles.metaLabel}>Status</span>
+              <span className={`${styles.badge} ${styles[product.status]}`}>
+                {product.status.charAt(0).toUpperCase() + product.status.slice(1)}
+              </span>
+            </div>
+            <div className={styles.metaItem}>
+              <span className={styles.metaLabel}>Created</span>
+              <span className={styles.metaValue}>{formatDate(product.createdAt)}</span>
+            </div>
+          </div>
         </div>
       </div>
     </div>

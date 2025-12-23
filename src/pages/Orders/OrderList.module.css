@@ -7,23 +7,37 @@
 .header {
   display: flex;
   flex-direction: column;
-  gap: 10px;
+  gap: 12px;
 }
 
 .filters {
   display: flex;
-  gap: 10px;
+  gap: 12px;
   align-items: center;
 }
 
 .filters select {
-  padding: 8px 10px;
-  border: 1px solid #ccc;
-  border-radius: 4px;
-  background: #fff;
+  padding: 10px 16px;
+  padding-right: 32px;
+  border: 1px solid var(--primary-light);
+  border-radius: 8px;
+  background: var(--surface);
+  backdrop-filter: blur(5px);
+  color: var(--text-primary);
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  min-width: 140px;
+}
+
+.filters select:focus {
+  outline: none;
+  border-color: var(--primary);
+  box-shadow: 0 0 0 3px rgba(255, 107, 157, 0.1);
 }
 
 .searching {
   font-size: 13px;
-  color: #666;
+  color: var(--text-secondary);
+  font-weight: 500;
 }

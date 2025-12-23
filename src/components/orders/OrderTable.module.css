@@ -2,10 +2,26 @@
   width: 100%;
   border-collapse: collapse;
   font-size: 14px;
+  background: var(--surface);
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: var(--shadow);
+  backdrop-filter: blur(10px);
+  border: 1px solid var(--border);
 }
 
 .table th,
 .table td {
-  padding: 8px;
-  border-bottom: 1px solid #eee;
+  padding: 12px;
+  border-bottom: 1px solid var(--border);
+}
+
+.table th {
+  background: var(--primary-lighter);
+  color: var(--primary);
+  font-weight: 600;
+}
+
+.table tbody tr:hover {
+  background: var(--primary-lighter);
 }
